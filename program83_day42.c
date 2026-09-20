@@ -1,11 +1,11 @@
-/*Q84: Convert a lowercase string to uppercase without using built-in functions.
+/*Q83: Count vowels and consonants in a string.
 
 
 Sample Test Cases:
 Input 1:
 hello
 Output 1:
-HELLO
+Vowels=2, Consonants=3
 
 */
 
@@ -15,20 +15,15 @@ int main() {
     char str[100];
     int i, vowels = 0, consonants = 0;
 
-    fgets(str, sizeof(str), stdin);
+    scanf("%s", str);
 
-    for (i = 0; str[i] != '\0'; i++) {
-        if ((str[i] >= 'a' && str[i] <= 'z') ||
-            (str[i] >= 'A' && str[i] <= 'Z')) {
-
-            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' ||
-                str[i] == 'o' || str[i] == 'u' ||
-                str[i] == 'A' || str[i] == 'E' || str[i] == 'I' ||
-                str[i] == 'O' || str[i] == 'U') {
-                vowels++;
-            } else {
-                consonants++;
-            }
+    for(i = 0; str[i] != '\0'; i++) {
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' ||
+           str[i] == 'o' || str[i] == 'u') {
+            vowels++;
+        }
+        else {
+            consonants++;
         }
     }
 
